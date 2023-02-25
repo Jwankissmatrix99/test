@@ -1,0 +1,9 @@
+const dailyMeetings = 5; // average number of people a person meets per day
+const connectionRate = 0.1; // percentage of people you meet that you may form a connection with
+const lowRisk = 0.6; // percentage of relationships with low risk factors
+const mediumRisk = 0.3; // percentage of relationships with medium risk factors
+const highRisk = 0.1; // percentage of relationships with high risk factors
+const n = 7; // average number of relationships per person in their lifetime
+const successRate = ((dailyMeetings * connectionRate * lowRisk * 0.8) + (dailyMeetings * connectionRate * mediumRisk * 0.5) + (dailyMeetings * connectionRate * highRisk * 0.1)) * n * 100 / 2.7e9;
+
+console.log(`The estimated success rate of a healthy relationship is ${successRate.toFixed(2)}%`);
